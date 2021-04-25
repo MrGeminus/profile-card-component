@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+@font-face {
+    font-family: KumbhSansBold;
+    src: url(../fonts/KumbhSans-Bold.ttf);
+}
+@font-face {
+    font-family: KumbhSansRegular;
+    src: url(../fonts/KumbhSans-Regular.ttf);
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    padding: 0 1.5rem;
+    background-color: hsl(185, 75%, 39%);
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    font-size: 1.12rem;
+    section{
+        .card{
+            background-color: hsl(0, 0%, 100%);
+            display: flex;
+            flex-direction: column;
+            border-radius: 1rem;
+            .card-upper-part{
+                width: 100%;
+                height: 8.8rem;
+                border-top-left-radius: 1rem;
+                border-top-right-radius: 1rem;
+                border-bottom: 0.15rem solid hsl(185, 75%, 39%);
+                background: url(../images/bg-pattern-card.svg);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .card-middle-part{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                border-bottom: 0.15rem solid hsl(0, 0%, 59%);
+                .profile-image{
+                    width: 6.7rem;
+                    height: 6.7rem;
+                    position: absolute;
+                    top: -3.6rem;
+                    left: 6.5rem;
+                    border: 0.35rem solid hsl(0, 0%, 100%); 
+                    border-radius: 100%;
+                    overflow: hidden;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 100%;
+                    }
+                }
+                .personal-info{
+                    margin-top: 4.5rem;
+                    margin-bottom: 1.5rem;
+                }
+            }
+            .card-lower-part{
+                padding: 1.7rem 2.5rem;
+                border-bottom-left-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+                display: flex;
+                justify-content: space-between;
+                .stats{
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    color: hsl(0, 0%, 59%);
+                }
+    
+            }
+        }
+    }
+    footer{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        text-align: center;
+    }
+}
