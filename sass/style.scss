@@ -1,53 +1,114 @@
+/*----------------------------
+	Font Import
+----------------------------*/
+
+@font-face {
+    font-family: KumbhSansBold;
+    src: url(../fonts/KumbhSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: KumbhSansRegular;
+    src: url(../fonts/KumbhSans-Regular.ttf);
+}
+
+/*----------------------------
+	Variables definition
+----------------------------*/
+
+// Color
+
+$color-one: hsl(185, 75%, 39%);
+$color-two: hsl(229, 23%, 23%);
+$color-three: hsl(227, 10%, 46%);
+$color-four: hsl(0, 0%, 59%);
+
+$standard-font-size: 18px;
+
+/*----------------------------
+	Screen reader stuff
+----------------------------*/
+
+// This class, also known as sr-only, is used for hiding information that are intended only for screen readers    
+
+.screen-readers-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+}
+
+/*----------------------------
+	General styling
+----------------------------*/
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
-@font-face {
-    font-family: KumbhSansBold;
-    src: url(../fonts/KumbhSans-Bold.ttf);
-}
-@font-face {
-    font-family: KumbhSansRegular;
-    src: url(../fonts/KumbhSans-Regular.ttf);
-}
-body{
-    width: 100vw;
-    height: 100vh;
-    background-color: hsl(185, 75%, 39%);
-    font-size: 1.12rem;
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    height: 100%;
+  }
+
+/*----------------------------
+	Profile card component
+----------------------------*/
+
+.card-component-container{
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-content: center;
-    justify-content: center;
+    position: relative;
+    font-family: KumbhSansBold;
     overflow: hidden;
-    .bg-up{
-        width: 100%;
-        height: 100%;
+    background: #ddd;
+    z-index: -1;
+
+    &:before,
+    &:after {
         position: absolute;
+        content: '';
+        width: 100vw;
+        height: 100vh;
+        background-size: auto;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+
+    &:before {
         top: 0;
         left: 0;
-        background: url(../images/bg-pattern-top.svg);
-        background-repeat: no-repeat;
-        background-size: 70%;
-        background-position: -67% 165%;
+        background: url('../images/bg-pattern-top.svg') no-repeat bottom right;
     }
-    .bg-bottom{
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: url(../images/bg-pattern-bottom.svg);
-        background-repeat: no-repeat;
-        background-size: 70%;
-        background-position: 147% -113%;
+
+    &:after {
+        top: 100%;
+        left: 100%;
+        background: url('../images/bg-pattern-bottom.svg') no-repeat top left;
     }
-    section{
-        width: 100%;
-        position: absolute;
-        z-index: 2;
-        .card{
+
+}  
+
+main{
+    flex-grow: 1;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}    
+
+.card{
             width: 20.54rem;
             margin: auto;
             background-color: hsl(0, 0%, 100%);
@@ -57,6 +118,7 @@ body{
             -webkit-box-shadow:-25px 57px 75px 6px rgba(0,0,0,0.19);
             -moz-box-shadow: -25px 57px 75px 6px rgba(0,0,0,0.19);
             box-shadow: -25px 57px 75px 6px rgba(0,0,0,0.19);
+}
             .card-upper-part{
                 width: 100%;
                 height: 8.8rem;
@@ -73,6 +135,7 @@ body{
                 flex-direction: column;
                 text-align: center;
                 border-bottom: 0.1rem solid hsl(0, 0%, 91%);
+            }
                 .profile-image-outer-border{
                     width: 6.84rem;
                     height: 6.84rem;
@@ -105,7 +168,7 @@ body{
                         margin-top: 0.5rem;
                     }
                 }
-            }
+            
             .card-lower-part{
                 padding: 1.7rem 2.5rem;
                 border-bottom-left-radius: 1rem;
@@ -126,37 +189,25 @@ body{
                 }
     
             }
-            .dark-blue{
-                color: hsl(229, 23%, 23%);
-                font-family: KumbhSansBold;
-            }
-        }
-    }
-    footer{
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        display: flex;
-        flex-direction: column;
-        p{
-            padding: 0.2rem 0;
-            font-size: 0.9rem;
-            font-family: KumbhSansRegular;
-            text-align: center;
-            a{
-                color: hsl(229, 23%, 23%);  
-                text-decoration:none;
-            }
+.dark-blue{
+    color: hsl(229, 23%, 23%);
+    font-family: KumbhSansBold;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    p{
+        padding: 0.2rem 0;
+        font-size: 0.9rem;
+        font-family: KumbhSansRegular;
+        text-align: center;
+        a{
+            color: hsl(229, 23%, 23%);  
+            text-decoration:none;
         }
     }
 }
-@media screen and (min-width: 600px) {
-    body{
-        footer{
-            flex-direction: row;
-            justify-content: center;
-            align-content: center;
-        }
-    }    
-}
+
+/*----------------------------
+	Media queries
+----------------------------*/ 

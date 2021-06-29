@@ -11,42 +11,47 @@
 </head>
 
 <body>
-  <div class="bg-up"></div>
-  <section>
-    <div class="card">
-      <div class="card-upper-part"></div>
-      <div class="card-middle-part">
-        <div class="profile-image-outer-border">
-          <div class="profile-image">
-            <img src="images/image-victor.jpg" alt="Victor profile image">
+  <div class="card-component-container">
+    <h1 class="screen-readers-only">Profile card component</h1>
+    <main>
+      <div class="card">
+        <div class="card-upper-part"></div>
+        <header class="card-middle-part">
+          <div class="profile-image-outer-border">
+            <div class="profile-image">
+              <img src="images/image-victor.jpg" alt="Victor profile image">
+            </div>
           </div>
-        </div>
-        <div class="personal-info">
-          <p><span class="dark-blue">Victor Crest</span> 26</p>
-          <p class="place">London</p>
-        </div>
+          <div class="personal-info">
+            <p><span class="dark-blue">Victor Crest</span> 26</p>
+            <p class="place">London</p>
+          </div>
+        </header>
+        <section class="card-lower-part">
+          <ul class="">
+            <li class="stats">
+              <p class="stats-value dark-blue">80K</p>
+              <p class="stats-label small-letters">Followers</p>
+            </li>
+            <li class="stats">
+              <p class="stats-value dark-blue">803K</p>
+              <p class="stats-label small-letters">Likes</p>
+            </li>
+            <li class="stats">
+              <p class="stats-value dark-blue">1.4K</p>
+              <p class="stats-label small-letters">Photos</p>
+            </li>
+          </ul>
+        </section>
       </div>
-      <div class="card-lower-part">
-        <div class="stats">
-          <p class="dark-blue">80K</p>
-          <p class="small-letters">Followers</p>
-        </div>
-        <div class="stats">
-          <p class="dark-blue">803K</p>
-          <p class="small-letters">Likes</p>
-        </div>
-        <div class="stats">
-          <p class="dark-blue">1.4K</p>
-          <p class="small-letters">Photos</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="bg-bottom"></div>
-  <footer>
-    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p>
-    <p>Coded by <a href="#">Uros Tomic</a>.</p>
-  </footer>
+    </main>
+    <footer>
+      <p>Challenge by <a href="https://www.frontendmentor.io/solutions/sass-flexbox-l_3Kcz_PE" target="_blank"
+          rel="noopener">Frontend
+          Mentor</a>.</p>
+      <p>Coded by <a href="https://mrgeminus.com/" target="_blank" alt="Web" rel="noopener">Uros Tomic</a>.</p>
+    </footer>
+  </div>
 </body>
 
 </html>
