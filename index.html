@@ -13,43 +13,38 @@
 <body>
   <div class="card-component-container">
     <h1 class="screen-readers-only">Profile card component</h1>
-    <main>
-      <div class="card">
-        <div class="card-upper-part"></div>
-        <header class="card-middle-part">
-          <div class="profile-image-outer-border">
-            <div class="profile-image">
-              <img src="images/image-victor.jpg" alt="Victor profile image">
-            </div>
-          </div>
-          <div class="personal-info">
-            <p><span class="dark-blue">Victor Crest</span> 26</p>
-            <p class="place">London</p>
-          </div>
+    <main class="card-component-container__main">
+      <article class="profile-card">
+        <header class="profile-card__header">
+          <img class="profile-card__image" src="images/image-victor.jpg" alt="Victors profile picture">
+          <h2 class="profile-card__title">Victor Crest<span class="screen-readers-only">Age</span><span
+              class="profile-card__title--color-light"> 26</span></h2>
+          <p class="profile-card__location">London</p>
         </header>
         <section class="card-lower-part">
-          <ul class="">
-            <li class="stats">
-              <p class="stats-value dark-blue">80K</p>
-              <p class="stats-label small-letters">Followers</p>
-            </li>
-            <li class="stats">
-              <p class="stats-value dark-blue">803K</p>
-              <p class="stats-label small-letters">Likes</p>
-            </li>
-            <li class="stats">
-              <p class="stats-value dark-blue">1.4K</p>
-              <p class="stats-label small-letters">Photos</p>
-            </li>
-          </ul>
+          <h2 class="screen-readers-only">Profile statistics</h2>
+          <dl class="profile-card__stats-list">
+            <div class="profile-card__stats-list-item">
+              <dt class="profile-card__stat-label">Followers</dt>
+              <dd class="profile-card__stat-value">80K</dd>
+            </div>
+            <div class="profile-card__stats-list-item">
+              <dt class="profile-card__stat-label">Likes</dt>
+              <dd class="profile-card__stat-value">803K</dd>
+            </div>
+            <div class="profile-card__stats-list-item">
+              <dt class="profile-card__stat-label">Photos</dt>
+              <dd class="profile-card__stat-value">1.4K</dd>
+            </div>
+          </dl>
         </section>
-      </div>
+      </article>
     </main>
-    <footer>
+    <footer class="card-component-container__footer">
       <p>Challenge by <a href="https://www.frontendmentor.io/solutions/sass-flexbox-l_3Kcz_PE" target="_blank"
           rel="noopener">Frontend
-          Mentor</a>.</p>
-      <p>Coded by <a href="https://mrgeminus.com/" target="_blank" alt="Web" rel="noopener">Uros Tomic</a>.</p>
+          Mentor</a>.
+        Coded by <a href="https://mrgeminus.com/" target="_blank" rel="noopener">Uros Tomic</a>.</p>
     </footer>
   </div>
 </body>
