@@ -24,7 +24,8 @@ This is a solution to the [Profile card component challenge on Frontend Mentor](
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](images\Desktop-view.png)
+![](images\Mobile-view.png)
 
 ### Links
 
@@ -42,12 +43,21 @@ This is a solution to the [Profile card component challenge on Frontend Mentor](
 
 ### What I learned
 
+While working on this project I learned more about the HTML5 semantics and accessibility.
+
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<h1 class="screen-readers-only">Profile card component</h1>
 ```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.screen-readers-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 ```
 
@@ -57,15 +67,15 @@ I will definitely divide more attention to accessibility and commenting in the f
 
 ### Useful resources
 
-- [sr-only class](https://www.w3docs.com/snippets/css/why-and-how-the-bootstrap-sr-only-class-is-used.html) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [rel=”noreferrer noopener”](https://www.reliablesoft.net/noreferrer-noopener/) - This is an amazing article that explains the meaning and usage of HTML attributes noopener and noreferrer as well as their impact on SEO.
+- [sr-only class](https://www.w3docs.com/snippets/css/why-and-how-the-bootstrap-sr-only-class-is-used.html) - This article explains the sr-only class.
+- [list-style-type: none](https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html) - This is an amazing article that explains the meaning and usage of HTML attributes noopener and noreferrer as well as their impact on SEO.
 
 ## Author
 
 - Website - [Uros Tomic](https://mrgeminus.com/)
 - Frontend Mentor - [@MrGeminus](https://www.frontendmentor.io/profile/MrGeminus)
 - LinkedIn - [Uros Tomic](https://www.linkedin.com/in/mrgeminus/)
-- GitHub - - [MrGeminus](https://github.com/MrGeminus)
+- Xing - [Uros Tomic](https://www.xing.com/profile/Uros_Tomic3/cv)
 - StackOverflow - [MrGeminus](https://www.linkedin.com/in/mrgeminus/)
 - Twitter - [@MrGeminus](https://twitter.com/MrGeminus)
 

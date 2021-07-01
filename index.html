@@ -4,24 +4,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <title>Frontend Mentor | Profile card component</title>
 </head>
 
 <body>
+  <!-- First container starts -->
   <div class="card-component-container">
+    <!-- This h1 is only for screen readers and not visible on the page -->
     <h1 class="screen-readers-only">Profile card component</h1>
+    <!-- Second container starts-->
     <main class="card-component-container__main">
+      <!-- Profile card starts -->
       <article class="profile-card">
         <header class="profile-card__header">
-          <img class="profile-card__image" src="images/image-victor.jpg" alt="Victors profile picture">
+          <div class="profile-card__image-wrapper">
+            <img class="profile-card__image" src="images/image-victor.jpg" alt="Victors profile picture">
+          </div>
           <h2 class="profile-card__title">Victor Crest<span class="screen-readers-only">Age</span><span
               class="profile-card__title--color-light"> 26</span></h2>
           <p class="profile-card__location">London</p>
         </header>
         <section class="card-lower-part">
+          <!-- This h2 is only for screen readers and not visible on the page -->
           <h2 class="screen-readers-only">Profile statistics</h2>
           <dl class="profile-card__stats-list">
             <div class="profile-card__stats-list-item">
@@ -39,14 +45,20 @@
           </dl>
         </section>
       </article>
+      <!-- Profile card ends -->
     </main>
+    <!-- Second container ends-->
+    <!-- Footer starts -->
     <footer class="card-component-container__footer">
       <p>Challenge by <a href="https://www.frontendmentor.io/solutions/sass-flexbox-l_3Kcz_PE" target="_blank"
-          rel="noopener">Frontend
-          Mentor</a>.
-        Coded by <a href="https://mrgeminus.com/" target="_blank" rel="noopener">Uros Tomic</a>.</p>
+          rel="noopener" class="attribution-link">Frontend
+          Mentor</a>.</p>&nbsp;
+      <p>Coded by <a href="https://mrgeminus.com/" target="_blank" rel="noopener" class="attribution-link">Uros
+          Tomic</a>.</p>
     </footer>
+    <!-- Footer ends -->
   </div>
+  <!-- First container ends -->
 </body>
 
 </html>

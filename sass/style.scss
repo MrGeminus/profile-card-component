@@ -18,10 +18,13 @@
 
 // Color
 
-$bg-color: hsl(185, 75%, 39%);
-$card-color: hsl(0, 0%, 59%);
+$main-bg-color: hsl(185, 75%, 39%);
+$card-color: hsl(0, 0%, 100%);
 $primary-font-color: hsl(229, 23%, 23%);
 $secondary-font-color: hsl(227, 10%, 46%);
+$upper-card-border-color: hsla(185, 75%, 39%, 0.658);
+$image-border-color: hsl(0, 0%, 100%);
+$lower-card-border-color: hsl(0, 0%, 59%);
 
 // Font size
 
@@ -34,17 +37,14 @@ $standard-font-size: 1.12rem;
 // This class, also known as sr-only, is used for hiding information that are intended only for screen readers    
 
 .screen-readers-only {
-    border: 0;
-    clip: rect(1px, 1px, 1px, 1px);
-    -webkit-clip-path: inset(50%);
-    clip-path: inset(50%);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
     position: absolute;
     width: 1px;
-    white-space: nowrap;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
 
 /*----------------------------
@@ -73,7 +73,7 @@ body {
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    background: $bg-color;
+    background: $main-bg-color;
 
     &:before,
     &:after {
@@ -81,19 +81,20 @@ body {
         content: '';
         width: 100vw;
         height: 100vh;
-        background-size: auto;
-        transform: translate(-49%, -48%);
+        transform: translate(-50%, -50%);
     }
 
     &:before {
-        top: 0;
+        top: 13%;
         left: 0;
+        scale: 1.2;
         background: url('../images/bg-pattern-top.svg') no-repeat bottom right;
     }
 
     &:after {
-        top: 100%;
-        left: 100%;
+        top: 117%;
+        left: 116%;
+        scale: 1.2;
         background: url('../images/bg-pattern-bottom.svg') no-repeat top left;
     }
 
@@ -111,7 +112,7 @@ main{
     width: 100%;
     max-width: 20.5rem;
     position: relative;
-    background-color: hsl(0, 0%, 100%);
+    background-color: $card-color;
     border-radius: 1rem;
     -webkit-box-shadow:-1.56rem 3.56rem 4.68rem 0.37rem rgba(0,0,0,0.19);
     -moz-box-shadow: -1.56rem 3.56rem 4.68rem 0.37rem rgba(0,0,0,0.19);
@@ -139,14 +140,20 @@ main{
         background-size: cover;
         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;
+        border-bottom: 0.17rem solid $upper-card-border-color;
       }
 }
-                  
-.profile-card__image {
+
+.profile-card__image-wrapper{
     margin-top: -3.12rem;
     border-radius: 50%;
-    border: 0.3rem solid white;
+    border: 0.3rem solid $image-border-color;
     z-index: 2;
+}
+
+.profile-card__image {
+    width: 100%;
+    border-radius: 50%;
 }   
 
 .profile-card__title{
@@ -181,7 +188,7 @@ main{
 &:before {
     content: '';
     height: 0.07rem;
-    background: $card-color;
+    background: $lower-card-border-color;
     width: 100%;
     position: absolute;
     top: 0;
@@ -191,6 +198,7 @@ main{
 }
 
 .profile-card__stats-list-item{
+    margin: 0.37rem;
     display: flex;
     flex-direction: column;
     flex-flow: column-reverse;
@@ -214,23 +222,58 @@ main{
 .card-component-container__footer{
     width: 100%;
     padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     position: relative;
     color:hsl(0, 0%, 0%);
     font-size: 0.9rem;
     font-family: KumbhSansRegular;
     text-align: center;
     z-index: 1;
-    a{
-        color:hsl(0, 0%, 0%);
-        font-family: KumbhSansBold;  
-        text-decoration:none;
-        &:hover{
-            cursor: pointer;
-            text-decoration:underline;
-        }
+    
+}
+
+.attribution-link{
+    color:hsl(0, 0%, 0%);
+    font-family: KumbhSansBold;  
+    text-decoration:none;
+
+    &:hover{
+        cursor: pointer;
+        text-decoration:underline;
     }
 }
 
 /*----------------------------
 	Media queries
 ----------------------------*/ 
+
+@media (max-width:240px){
+    .card-component-container__footer{
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width:414px){
+    .card-component-container{ 
+        &:before {
+            top: 11%;
+            left: 13%;
+            scale: 1.2;
+            background: url('../images/bg-pattern-top.svg') no-repeat bottom right;
+        }
+    
+        &:after {
+            top: 97%;
+            left: 110%;
+            scale: 1.2;
+            background: url('../images/bg-pattern-bottom.svg') no-repeat top left;
+        }
+    
+    }  
+    .card-component-container__footer{
+        flex-direction: column;
+    }
+}
