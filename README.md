@@ -24,7 +24,7 @@ This is a solution to the [Profile card component challenge on Frontend Mentor](
 
 ### Screenshot
 
-![](images/Desktop-view.png)
+![](images/Desktop-preview.png)
 
 ### Links
 
@@ -36,9 +36,10 @@ This is a solution to the [Profile card component challenge on Frontend Mentor](
 ### Built with
 
 - Semantic HTML5 markup
-- SASS
+- CSS pre-processor (SASS)
 - Flexbox
 - Mobile-first workflow
+- BEM naming convention
 
 ### What I learned
 
